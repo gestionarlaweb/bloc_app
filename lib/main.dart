@@ -1,6 +1,8 @@
 import 'package:bloc_app/app/login/view/login_view.dart';
 import 'package:flutter/material.dart';
 
+import 'app/login/view/gif_view.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      home: LoginView(),
+      //home: LoginView(),
+      home: GifView(),
     );
   }
 }

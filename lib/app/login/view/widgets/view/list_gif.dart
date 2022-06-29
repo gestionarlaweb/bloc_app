@@ -33,21 +33,32 @@ class _TargetGig extends StatelessWidget {
           margin: EdgeInsets.only(top: 10),
           child: Wrap(
             children: [
-              Text(
-                '${gif.title}-',
-                style: TextStyle(color: Colors.blueGrey),
+              Center(
+                child: Text(
+                  '${gif.title}-',
+                  style: TextStyle(color: Colors.blueGrey),
+                ),
               ),
-              Container(
-                // ignore: unnecessary_null_comparison
-                child: (gif.embedUrl != null)
-                    ? FadeInImage(
+              Center(
+                child: Container(
+                  height: 120,
+                  width: 120,
+                  child: Column(
+                    children: [
+                      Image.network(
+                          'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif'),
+                    ],
+
+                    /*
+                    children: [
+                      FadeInImage(
                         placeholder: AssetImage('assets/img/giphy.gif'),
-                        image: NetworkImage(
-                            'https://giphy.com/embed/bgOlRzT5klkAWyn5Kf'), //NetworkImage(gif.embedUrl),
-                      )
-                    : Image(
-                        image: AssetImage('assets/img/no-image.png'),
+                        image: NetworkImage(gif.url), // '${gif.url}.gif'
                       ),
+                    ],
+                    */
+                  ),
+                ),
               ),
             ],
           ),
