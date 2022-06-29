@@ -9,6 +9,7 @@ class Datum {
     required this.bitlyGifUrl,
     required this.bitlyUrl,
     required this.embedUrl,
+    required this.title,
   });
 
   String type;
@@ -18,6 +19,7 @@ class Datum {
   String bitlyGifUrl;
   String bitlyUrl;
   String embedUrl;
+  String title;
 
   factory Datum.fromJson(String str) => Datum.fromMap(json.decode(str));
 
@@ -31,6 +33,7 @@ class Datum {
         bitlyGifUrl: json["bitly_gif_url"],
         bitlyUrl: json["bitly_url"],
         embedUrl: json["embed_url"],
+        title: json["title"],
       );
 
   Map<String, dynamic> toMap() => {
@@ -41,5 +44,6 @@ class Datum {
         "bitly_gif_url": bitlyGifUrl,
         "bitly_url": bitlyUrl,
         "embed_url": embedUrl,
+        "title": title,
       };
 }

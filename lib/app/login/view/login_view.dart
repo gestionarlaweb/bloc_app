@@ -1,8 +1,7 @@
-import 'package:bloc_app/app/login/view/gif/gif_view.dart';
+import 'package:bloc_app/app/login/view/gif_view.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-//import 'package:provider/provider.dart';
 
 import '../../../core/constants/app.dart';
 import '../controller/login_controller.dart';
@@ -26,7 +25,7 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  AppBar get buildAppBar => AppBar(title: Text('Appbar'));
+  AppBar get buildAppBar => AppBar(title: Text('Gif App'));
 
   Widget get buildBody {
     return BlocProvider(
@@ -39,11 +38,6 @@ class LoginView extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: buildBlocListener,
       builder: (context, state) {
-        // if (state is LoginLoading) {
-        //   return Center(
-        //     child: CircularProgressIndicator.adaptive(),
-        //   );
-        // }
         return buildForm(context, state);
       },
     );
