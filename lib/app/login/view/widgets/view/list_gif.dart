@@ -44,19 +44,20 @@ class _TargetGig extends StatelessWidget {
                   height: 120,
                   width: 120,
                   child: Column(
+                    /*
                     children: [
                       Image.network(
                           'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif'),
                     ],
+                    */
 
-                    /*
                     children: [
                       FadeInImage(
                         placeholder: AssetImage('assets/img/giphy.gif'),
-                        image: NetworkImage(gif.url), // '${gif.url}.gif'
+                        image: NetworkImage(
+                            gif.images.original.url), // '${gif.url}.gif'
                       ),
                     ],
-                    */
                   ),
                 ),
               ),
