@@ -28,36 +28,35 @@ class _TargetGig extends StatelessWidget {
   @override
   Widget build(BuildContext context) => OrientationBuilder(
         builder: (context, orientation) {
-          //final isPortrait = orientation == Orientation.portrait;
-          // return GridView.count(
-          // crossAxisCount: isPortrait ? 1 : 3,
-          // children: List.generate(
-          //   20,
-          //   (index) => Column(
           return SingleChildScrollView(
             child: Container(
+              color: Color.fromARGB(145, 213, 220, 225),
               padding: EdgeInsets.symmetric(horizontal: 10),
-              margin: EdgeInsets.only(top: 10),
+              margin: EdgeInsets.only(top: 1),
               child: Wrap(
                 children: [
                   Center(
                     child: Text(
                       '${gif.title}-',
-                      style: TextStyle(color: Colors.blueGrey),
+                      style: TextStyle(color: Color.fromARGB(255, 66, 59, 59)),
                     ),
                   ),
                   Center(
-                    child: Container(
-                      height: 120,
-                      width: 120,
-                      child: Column(
-                        children: [
-                          FadeInImage(
-                            placeholder: AssetImage('assets/img/giphy.gif'),
-                            image: NetworkImage(
-                                gif.images.original.url), // '${gif.url}.gif'
-                          ),
-                        ],
+                    child: GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, 'detail',
+                          arguments: gif),
+                      child: Container(
+                        color: Colors.black,
+                        height: 120,
+                        width: 120,
+                        child: Column(
+                          children: [
+                            FadeInImage(
+                              placeholder: AssetImage('assets/img/giphy.gif'),
+                              image: NetworkImage(gif.images.original.url),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

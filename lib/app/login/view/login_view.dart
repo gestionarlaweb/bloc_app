@@ -21,11 +21,19 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar,
-      body: buildBody,
+      body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: const AssetImage('assets/img/background.png'),
+                  fit: BoxFit.cover)),
+          child: buildBody),
     );
   }
 
-  AppBar get buildAppBar => AppBar(title: Text('Gif App'));
+  AppBar get buildAppBar => AppBar(
+        title: Text('Gif App'),
+        backgroundColor: AppConstants.kColorAppBar,
+      );
 
   Widget get buildBody {
     return BlocProvider(
