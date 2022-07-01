@@ -45,17 +45,22 @@ class _TargetGig extends StatelessWidget {
                     child: GestureDetector(
                       onTap: () => Navigator.pushNamed(context, 'detail',
                           arguments: gif),
-                      child: Container(
-                        color: Colors.black,
-                        height: 120,
-                        width: 120,
-                        child: Column(
-                          children: [
-                            FadeInImage(
-                              placeholder: AssetImage('assets/img/giphy.gif'),
-                              image: NetworkImage(gif.images.original.url),
-                            ),
-                          ],
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50)),
+                        child: Container(
+                          color: Colors.black,
+                          height: 120,
+                          width: 120,
+                          child: Column(
+                            children: [
+                              FadeInImage(
+                                placeholder: AssetImage('assets/img/giphy.gif'),
+                                image: NetworkImage(gif.images.original.url),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
