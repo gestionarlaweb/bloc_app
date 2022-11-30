@@ -75,12 +75,24 @@ class LoginView extends StatelessWidget {
   Widget buildForm(BuildContext context, LoginState state) {
     return Form(
       key: formKey,
-      child: Column(
-        children: [
-          buildTextField(emailController),
-          buildTextField(passwordController),
-          buildButton(context, state)
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Column(
+          children: [
+            TextField(
+                showCursor: true,
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Email: eve.holt@reqres.in')),
+            buildTextField(emailController),
+            TextField(
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Password: cityslicka')),
+            buildTextField(passwordController),
+            buildButton(context, state)
+          ],
+        ),
       ),
     );
   }
